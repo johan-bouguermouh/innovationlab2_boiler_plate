@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import LoginForm from './components/LoginForm'
 import SignUp from './components/Signup'
 import About from './components/About/About'
+import Acount from './components/Acount/Acount'
 import Posts from './components/Post/Posts'
 import Post from './components/Post/Post'
 import Container from '@mui/material/Container';
@@ -43,6 +44,9 @@ function App() {
             <Button color="inherit">
             <Link to="/about" style={{ color: 'white',textDecoration: 'none' }}>About</Link>
             </Button>
+            <Button color="inherit">
+            <Link to="/acount" style={{ color: 'white',textDecoration: 'none' }}>Acount</Link>
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>
@@ -54,6 +58,7 @@ function App() {
             <Route path="/sign-up" element={<SignUp />} /> 
               <Route path="/sign-in" element={<LoginForm />} />
               <Route path="/about" element={<About />} />
+              <Route path="/acount" element={<Acount />} />
               <Route path="/contact" element={<Contact />} />
 
             </Routes>

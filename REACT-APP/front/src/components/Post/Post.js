@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { API_URL } from '../../config'
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { selectPost } from '../../services/postApi';
+
 
 class Post extends React.Component {
 
@@ -15,7 +16,8 @@ class Post extends React.Component {
 
   componentDidMount = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/posts/1`);
+      const response = selectPost() ;
+      console.log(response)
       this.setState({ singleposts: response.data });
     } catch (error) {
       this.setState({ error });
